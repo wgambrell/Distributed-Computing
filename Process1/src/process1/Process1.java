@@ -22,6 +22,11 @@ public class Process1 {
                 mySocket.send(datagram1);
                 System.out.println("message was sent");
                 //ProcessController
+                int controllerPort = Integer.parseInt("5477");
+                String str2 = "Hello ControllerPort";
+                byte[] controlBuffer = str2.getBytes();
+                DatagramPacket datagramControl = new DatagramPacket(controlBuffer, controlBuffer.length, address,controllerPort);
+                mySocket.send(datagramControl);
                 
                 //Event 6
                 byte[] buffer2 = new byte[1024];
